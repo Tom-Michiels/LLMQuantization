@@ -16,21 +16,33 @@ This repository provides access to popular Llama models quantized using Q4_0, Q4
 
 ### Download Models
 
-Use the provided script to download models:
+Use the provided scripts to download models:
 
+**Option 1: Python script (Recommended)**
+```bash
+# Install dependencies first
+pip install -U huggingface-hub
+
+# Download a specific model
+python3 download_models.py llama-3-8b-q4ks
+
+# Download all small models (<2GB)
+python3 download_models.py all-small
+
+# Download all 7B/8B models
+python3 download_models.py all-7b
+```
+
+**Option 2: Bash script**
 ```bash
 # Show available models
 ./download_models.sh
 
 # Download a specific model
 ./download_models.sh llama-3-8b-q4ks
-
-# Download all small models (<2GB)
-./download_models.sh all-small
-
-# Download all 7B/8B models
-./download_models.sh all-7b
 ```
+
+**Troubleshooting**: If you encounter 403 Forbidden errors, see [DOWNLOAD_GUIDE.md](DOWNLOAD_GUIDE.md) for alternative download methods and troubleshooting tips.
 
 ### Available Models
 
@@ -72,15 +84,18 @@ After downloading models, run them with llama.cpp:
 
 ```
 .
-├── README.md              # This file
-├── MODELS.md             # Detailed model catalog
-├── download_models.sh    # Download script
-└── models/               # Downloaded model files
+├── README.md              # This file - Overview and quick start
+├── MODELS.md             # Detailed model catalog with specifications
+├── DOWNLOAD_GUIDE.md     # Comprehensive download guide and troubleshooting
+├── download_models.sh    # Bash download script
+├── download_models.py    # Python download script (recommended)
+└── models/               # Downloaded model files (gitignored)
 ```
 
 ## Documentation
 
-- [MODELS.md](MODELS.md) - Complete catalog of available models with download commands
+- [MODELS.md](MODELS.md) - Complete catalog of available models with download commands and specifications
+- [DOWNLOAD_GUIDE.md](DOWNLOAD_GUIDE.md) - Comprehensive download guide with multiple methods and troubleshooting
 - [llama.cpp](https://github.com/ggml-org/llama.cpp) - Inference engine documentation
 - [Hugging Face](https://huggingface.co/models?other=GGUF) - Browse more GGUF models
 
