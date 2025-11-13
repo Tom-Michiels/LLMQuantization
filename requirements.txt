@@ -1,0 +1,7 @@
+huggingface_hub
+datasets
+numpy
+torch
+llama-cpp-python
+gguf
+tqdm
